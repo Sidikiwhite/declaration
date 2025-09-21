@@ -71,7 +71,7 @@ function checkCompletion() {
   );
 }
 function sendResponse(choice) {
-   fetch("https://formspree.io/f/mzzjpeab", {
+   fetch("https://formspree.io/f/mzzjpeab/form", {
     method: "POST",
     body: JSON.stringify({ réponse: choice }),
     headers: {
