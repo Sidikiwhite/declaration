@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const data = { q1, q2, q3, q4, q5 };
 
-    fetch("hhttps://script.google.com/macros/s/AKfycbwKaV8uPQITU6Ify4O_qZg3oBKIIDDECzyD4DKjWccKBz_Xf2orQwsyZWcxAys9gHujAg/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwKaV8uPQITU6Ify4O_qZg3oBKIIDDECzyD4DKjWccKBz_Xf2orQwsyZWcxAys9gHujAg/exec", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
