@@ -71,7 +71,7 @@ function checkCompletion() {
   );
 }
 function sendResponse(choice) {
-   fetch("https://script.google.com/macros/s/AKfycbwKaV8uPQITU6Ify4O_qZg3oBKIIDDECzyD4DKjWccKBz_Xf2orQwsyZWcxAys9gHujAg/exec", {
+   fetch("https://formspree.io/f/mzzjpeab", {
     method: "POST",
     body: JSON.stringify({ réponse: choice }),
     headers: {
