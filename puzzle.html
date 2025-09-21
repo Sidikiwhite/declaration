@@ -15,8 +15,16 @@
     <div id="declarationSection" class="hidden">
       <h2>💌 Je t’aime. Ce site est mon cadeau pour toi.</h2>
       <p>Tu veux qu’on vive cette histoire ensemble ?</p>
-      <button onclick="sendResponse('oui')">Oui ❤️</button>
-      <button onclick="sendResponse('non')">Non 😢</button>
+     <form action="https://formspree.io/f/mzzjpeab" method="POST">
+  <input type="hidden" name="réponse" value="oui" />
+  <button type="submit">Oui 💖</button>
+</form>
+
+<form action="https://formspree.io/f/mzzjpeab" method="POST">
+  <input type="hidden" name="réponse" value="non" />
+  <button type="submit">Non 😢</button>
+</form>
+
     </div>
     <p id="responseMessage" class="hidden"></p>
 

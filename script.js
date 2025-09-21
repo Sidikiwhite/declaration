@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultSection = document.getElementById("resultSection");
   const submitBtn = document.getElementById("submitBtn");
 
-  // ✅ QCM exclusif
+  // ✅ Exclusivité des cases à cocher
   document.querySelectorAll(".exclusive").forEach(checkbox => {
     checkbox.addEventListener("change", function () {
       const group = this.dataset.group;
@@ -17,71 +17,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ Envoi du QCM
-  submitBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Récupérer les réponses du QCM
+  // ✅ Préparer les réponses du QCM avant envoi
+  submitBtn.addEventListener("click", () => {
     const q1 = document.querySelector('input[data-group="q1"]:checked')?.parentElement.textContent.trim() || "";
     const q2 = document.querySelector('input[data-group="q2"]:checked')?.parentElement.textContent.trim() || "";
     const q3 = document.querySelector('input[data-group="q3"]:checked')?.parentElement.textContent.trim() || "";
     const q4 = document.querySelector('input[data-group="q4"]:checked')?.parentElement.textContent.trim() || "";
     const q5 = document.querySelector('input[data-group="q5"]:checked')?.parentElement.textContent.trim() || "";
 
-    const data = { q1, q2, q3, q4, q5 };
-
-    fetch("https://script.google.com/macros/s/AKfycbwKaV8uPQITU6Ify4O_qZg3oBKIIDDECzyD4DKjWccKBz_Xf2orQwsyZWcxAys9gHujAg/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(res => res.text())
-    .then(msg => {
-      console.log("Réponses QCM envoyées :", msg);
-      document.querySelector(".resume_vie").classList.add("hidden");
-      submitBtn.style.display = "none";
-      startBtn.classList.remove("hidden");
-    })
-    .catch(err => {
-      alert("Erreur d’envoi QCM : " + err);
-    });
+    document.getElementById("q1Input").value = q1;
+    document.getElementById("q2Input").value = q2;
+    document.getElementById("q3Input").value = q3;
+    document.getElementById("q4Input").value = q4;
+    document.getElementById("q5Input").value = q5;
   });
 
-  // ✅ Démarrer le quiz
+  // ✅ Démarrer le quiz après QCM
   startBtn.addEventListener("click", () => {
     startBtn.style.display = "none";
     quizSection.classList.remove("hidden");
   });
 
-  // ✅ Envoi du quiz
-  quizForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(quizForm);
-    const answers = {};
-    formData.forEach((value, key) => {
-      answers[key] = value;
-    });
-
-    // Score fictif
-    const sincerityScore = "98%";
-    answers.sincerityScore = sincerityScore;
-
-    // Affichage résultat
+  // ✅ Préparer les réponses du quiz avant envoi
+  quizForm.addEventListener("submit", () => {
+    document.getElementById("scoreInput").value = "98%";
     quizSection.classList.add("hidden");
     resultSection.classList.remove("hidden");
-
-    fetch("https://formspree.io/f/mzzjpeab", {
-      method: "POST",
-      body: JSON.stringify(answers),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(res => res.text())
-    .then(data => console.log("Réponses quiz envoyées :", data))
-    .catch(err => console.error("Erreur quiz :", err));
   });
 });
