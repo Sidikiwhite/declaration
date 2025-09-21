@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pour Toi 💖</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Bienvenu sur ton site</h1>
+      <p class="subtitle">
+        repond au question sincerement le resltat en depend
+      </p>
+
+      <div class="resume_vie">
+        <h1 class="titre_resume">
+          avant de savoir des choses sur toi dit moi si ce que je sais deja est
+          correcte
+        </h1>
+        <div class="question">
+          <p>Tu est quelqu’un de gentile</p>
+          <label class="checkbox-container"
+            >Vrai
+            <input type="checkbox" class="exclusive" data-group="q1" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Faux
+            <input type="checkbox" class="exclusive" data-group="q1" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="question">
+          <p>Tres Intelligente</p>
+          <label class="checkbox-container"
+            >Vrai
+            <input type="checkbox" class="exclusive" data-group="q2" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Faux
+            <input type="checkbox" class="exclusive" data-group="q2" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="question">
+          <p>tres belle</p>
+          <label class="checkbox-container"
+            >Juste
+            <input type="checkbox" class="exclusive" data-group="q3" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="question">
+          <p>Tu aime bien avoir ton espace a toi</p>
+          <label class="checkbox-container"
+            >Vrai
+            <input type="checkbox" class="exclusive" data-group="q4" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Faux
+            <input type="checkbox" class="exclusive" data-group="q4" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="question">
+          <p>Tu savais pas que j'allais faire sa pour toi</p>
+          <label class="checkbox-container"
+            >Vrai
+            <input type="checkbox" class="exclusive" data-group="q5" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container"
+            >Faux
+            <input type="checkbox" class="exclusive" data-group="q5" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <button type="submit" id="submitBtn">Envoyer 💌</button>
+        <div>
+          <p></p>
+        </div>
+       
+      </div>
+       <button id="startBtn" class="hidden">Commencer le test</button>
+      <div id="quizSection" class="hidden">
+        <h2>💘 Le Quiz de la vérité 💘</h2>
+        <form id="quizForm">
+          <div class="question">
+            <label
+              >Si tu devais écrire une lettre à ton futur toi, que dirais-tu
+              ?</label
+            >
+            <input type="text" name="q1" required />
+          </div>
+          <div class="question">
+            <label
+              >Si tu devais raconter un souvenir rigolo lequel raconterais tu
+              ?</label
+            >
+            <input type="text" name="q2" required />
+          </div>
+          <div class="question">
+            <label>Qu’est-ce que tu recherches chez quelqu’un ?</label>
+            <input type="text" name="q2" required />
+          </div>
+
+          <div class="question">
+            <label
+              >Est-ce que tu savais que je ressentais quelque chose pour toi ?
+              ❤️</label
+            >
+            <select name="q4" required>
+              <option value="">Choisis une réponse</option>
+              <option value="oui">Oui</option>
+              <option value="un peu">Un peu</option>
+              <option value="non">Non</option>
+            </select>
+          </div>
+          <button type="submit">Terminer le quiz</button>
+        </form>
+      </div>
+
+      <div id="resultSection" class="hidden">
+        <h2>✨ Ton score de sincérité : 98% ✨</h2>
+        <p>Tu es merveilleuse, et chaque réponse m’a touché 💖</p>
+        <a href="puzzle.html"><button>Deuxième partie 🧩</button></a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

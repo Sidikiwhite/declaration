@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Cœur à Reconstituer ❤️</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🧩 Reconstitue ce cœur</h1>
+    <p class="subtitle">Chaque pièce te rapproche de mon secret...</p>
+    <canvas id="puzzleCanvas" width="400" height="400"></canvas>
+    <p id="completionMessage" class="hidden">Tu as réussi ! 💖</p>
+    <div id="declarationSection" class="hidden">
+      <h2>💌 Je t’aime. Ce site est mon cadeau pour toi.</h2>
+      <p>Tu veux qu’on vive cette histoire ensemble ?</p>
+      <button onclick="sendResponse('oui')">Oui ❤️</button>
+      <button onclick="sendResponse('non')">Non 😢</button>
+    </div>
+    <p id="responseMessage" class="hidden"></p>
+
+  </div>
+  
+
+  <script src="puzzle.js"></script>
+</body>
+</html>

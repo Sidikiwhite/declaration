@@ -1,0 +1,28 @@
+1. Créer une Google Sheet
+Crée une feuille nommée Réponses Quiz
+Mets les colonnes : Date, Passe-temps, Voyage, Chanson, Sentiment
+Créer un script Google Apps Script
+Dans ton Google Sheet : Extensions → Apps Script
+coller le code js 
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    new Date(),
+    data.q1,
+    data.q2,
+    data.q3,
+    data.q4
+  ]);
+  return ContentService.createTextOutput("Réponse enregistrée");
+}
+
+Clique sur Déployer → Déployer en tant que Web App
+Autorisation : “Accès à tout le monde, même anonymes”
+Copie l’URL du script (ex: https://script.google.com/macros/s/.../exec)
+Dans Google Sheets : Outils → Notifications de modification
+Active les alertes email à chaque ajout
+
+
+
+Place ton image de cœur dans le dossier sous le nom heart.png. Elle doit faire environ 400x400px pour bien s’adapter au canvas.
